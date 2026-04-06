@@ -1,69 +1,62 @@
-# Lightweight-Language-Model-Trainer
-
 A lightweight framework for training, experimenting with, and serving small language models (SLMs) using the HuggingFace ecosystem.
 
-This project demonstrates how a modern machine learning pipeline is structured — combining dataset processing, model training, experiment tracking, and inference APIs in a simple and modular codebase.
+This project demonstrates how a modern machine learning pipeline is structured — including dataset processing, model training, experiment tracking, and inference APIs — while keeping the codebase modular and easy to understand.
 
 Project Overview
 
-This project provides a minimal but realistic implementation of a language model training system.
+Training language models can be complex. This project provides a minimal yet realistic architecture for building and deploying language models.
 
-Pipeline:
+The pipeline includes:
 
 Dataset → Preprocessing → Tokenization → Model Training → Experiment Tracking → Inference API
 
-It is designed for:
+This repository is designed for:
 
-learning transformer model training
-experimenting with HuggingFace models
-building AI-powered applications
-understanding ML system architecture
-Features
+ML engineers learning transformer pipelines
+developers experimenting with language models
+researchers prototyping small language models
+students studying ML system architecture
+Key Features
 Modular Architecture
 
-The project is organized into clear modules:
+The codebase is organized into separate modules for configuration, datasets, models, training, inference, and utilities.
 
-config/
-datasets/
-models/
-training/
-inference/
-experiments/
-utils/
 Dataset Pipeline
 
-Supports multiple dataset formats:
+Supports multiple dataset sources:
 
-local text files
+Local text files
 JSON / JSONL datasets
 HuggingFace datasets
 Model Training
 
-Fine-tune transformer models using HuggingFace Trainer.
+Fine-tune transformer language models using HuggingFace Trainer.
 
 Experiment Tracking
 
-Training runs log metrics automatically:
+Training runs automatically log metrics and plots:
 
 experiments/logs/<run_id>/
     metrics.json
     loss.png
+
+Metrics tracked include:
+
+training loss
+evaluation loss
+learning rate
+training epochs
 CLI Interface
 
-Unified command-line interface.
-
-Your main.py CLI supports commands such as:
+Unified command-line interface:
 
 python main.py train
 python main.py generate
 python main.py serve
 python main.py dataset
-
-These commands are implemented in the main CLI controller .
-
 Inference API
 
-Run a FastAPI server for model inference.
+Serve the model with a FastAPI server.
 
 Example endpoint:
 
@@ -78,5 +71,5 @@ Example request:
 Example response:
 
 {
- "generated_text": "Neural networks are computational models..."
+ "generated_text": "Neural networks are computational models inspired by the human brain..."
 }
